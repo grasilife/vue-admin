@@ -12,7 +12,7 @@
         <div
           v-for="item of svgIcons"
           :key="item"
-          @click="handleClipboard(generateIconCode(item),$event)"
+          @click="handleClipboard(generateIconCode(item), $event)"
         >
           <el-tooltip placement="top">
             <div slot="content">
@@ -32,7 +32,7 @@
         <div
           v-for="item of elementIcons"
           :key="item"
-          @click="handleClipboard(generateElementIconCode(item),$event)"
+          @click="handleClipboard(generateElementIconCode(item), $event)"
         >
           <el-tooltip placement="top">
             <div slot="content">

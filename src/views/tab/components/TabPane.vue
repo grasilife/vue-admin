@@ -24,7 +24,9 @@
       label="Date"
     >
       <template slot-scope="scope">
-        <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+        <span>{{
+          scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}')
+        }}</span>
       </template>
     </el-table-column>
 
@@ -32,7 +34,7 @@
       min-width="300px"
       label="Title"
     >
-      <template slot-scope="{row}">
+      <template slot-scope="{ row }">
         <span>{{ row.title }}</span>
         <el-tag>{{ row.type }}</el-tag>
       </template>
@@ -76,7 +78,7 @@
       label="Status"
       width="110"
     >
-      <template slot-scope="{row}">
+      <template slot-scope="{ row }">
         <el-tag :type="row.status | statusFilter">
           {{ row.status }}
         </el-tag>
@@ -132,4 +134,3 @@ export default {
   }
 }
 </script>
-

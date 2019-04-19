@@ -82,7 +82,7 @@ const defalutList = [
 export default {
   components: { Todo },
   filters: {
-    pluralize: (n, w) => n === 1 ? w : w + 's',
+    pluralize: (n, w) => (n === 1 ? w : w + 's'),
     capitalize: s => s.charAt(0).toUpperCase() + s.slice(1)
   },
   data() {
@@ -146,5 +146,5 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './index.scss';
+@import './index.scss';
 </style>

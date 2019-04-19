@@ -1,10 +1,12 @@
 <template>
   <div class="components-container">
     <aside>
-      Based on <a
+      Based on
+      <a
         class="link-type"
         href="https://github.com/rowanwins/vue-dropzone"
-      > dropzone </a>.
+      >
+        dropzone </a>.
       {{ $t('components.dropzoneTips') }}
     </aside>
     <div class="editor-container">
@@ -36,4 +38,3 @@ export default {
   }
 }
 </script>
-

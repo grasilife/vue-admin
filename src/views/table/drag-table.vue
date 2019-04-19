@@ -27,7 +27,9 @@
         label="Date"
       >
         <template slot-scope="scope">
-          <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{
+            scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}')
+          }}</span>
         </template>
       </el-table-column>
 
@@ -79,7 +81,7 @@
         label="Status"
         width="110"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <el-tag :type="row.status | statusFilter">
             {{ row.status }}
           </el-tag>
@@ -103,7 +105,8 @@
     <div class="show-d">
       <el-tag style="margin-right:12px;">
         {{ $t('table.dragTips1') }} :
-      </el-tag> {{ oldList }}
+      </el-tag>
+      {{ oldList }}
     </div>
     <div class="show-d">
       <el-tag>{{ $t('table.dragTips2') }} :</el-tag> {{ newList }}
@@ -158,7 +161,9 @@ export default {
       })
     },
     setSort() {
-      const el = this.$refs.dragTable.$el.querySelectorAll('.el-table__body-wrapper > table > tbody')[0]
+      const el = this.$refs.dragTable.$el.querySelectorAll(
+        '.el-table__body-wrapper > table > tbody'
+      )[0]
       this.sortable = Sortable.create(el, {
         ghostClass: 'sortable-ghost', // Class name for the drop placeholder,
         setData: function(dataTransfer) {
@@ -181,23 +186,23 @@ export default {
 </script>
 
 <style>
-.sortable-ghost{
-  opacity: .8;
-  color: #fff!important;
-  background: #42b983!important;
+.sortable-ghost {
+  opacity: 0.8;
+  color: #fff !important;
+  background: #42b983 !important;
 }
 </style>
 
 <style scoped>
-.icon-star{
-  margin-right:2px;
+.icon-star {
+  margin-right: 2px;
 }
-.drag-handler{
+.drag-handler {
   width: 20px;
   height: 20px;
   cursor: pointer;
 }
-.show-d{
+.show-d {
   margin-top: 15px;
 }
 </style>

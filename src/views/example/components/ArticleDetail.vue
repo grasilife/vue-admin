@@ -8,7 +8,7 @@
     >
       <sticky
         :z-index="10"
-        :class-name="'sub-navbar '+postForm.status"
+        :class-name="'sub-navbar ' + postForm.status"
       >
         <CommentDropdown v-model="postForm.comment_disabled" />
         <PlatformDropdown v-model="postForm.platforms" />
@@ -66,8 +66,8 @@
                       placeholder="Search user"
                     >
                       <el-option
-                        v-for="(item,index) in userListOptions"
-                        :key="item+index"
+                        v-for="(item, index) in userListOptions"
+                        :key="item + index"
                         :label="item"
                         :value="item"
                       />
@@ -161,7 +161,11 @@ import { validURL } from '@/utils/validate'
 import { fetchArticle } from '@/api/article'
 import { searchUser } from '@/api/remote-search'
 import Warning from './Warning'
-import { CommentDropdown, PlatformDropdown, SourceUrlDropdown } from './Dropdown'
+import {
+  CommentDropdown,
+  PlatformDropdown,
+  SourceUrlDropdown
+} from './Dropdown'
 
 const defaultForm = {
   status: 'draft',
@@ -179,7 +183,16 @@ const defaultForm = {
 
 export default {
   name: 'ArticleDetail',
-  components: { Tinymce, MDinput, Upload, Sticky, Warning, CommentDropdown, PlatformDropdown, SourceUrlDropdown },
+  components: {
+    Tinymce,
+    MDinput,
+    Upload,
+    Sticky,
+    Warning,
+    CommentDropdown,
+    PlatformDropdown,
+    SourceUrlDropdown
+  },
   props: {
     isEdit: {
       type: Boolean,
@@ -249,21 +262,25 @@ export default {
   },
   methods: {
     fetchData(id) {
-      fetchArticle(id).then(response => {
-        this.postForm = response.data
-        // Just for test
-        this.postForm.title += `   Article Id:${this.postForm.id}`
-        this.postForm.content_short += `   Article Id:${this.postForm.id}`
+      fetchArticle(id)
+        .then(response => {
+          this.postForm = response.data
+          // Just for test
+          this.postForm.title += `   Article Id:${this.postForm.id}`
+          this.postForm.content_short += `   Article Id:${this.postForm.id}`
 
-        // Set tagsview title
-        this.setTagsViewTitle()
-      }).catch(err => {
-        console.log(err)
-      })
+          // Set tagsview title
+          this.setTagsViewTitle()
+        })
+        .catch(err => {
+          console.log(err)
+        })
     },
     setTagsViewTitle() {
       const title = this.lang === 'zh' ? '编辑文章' : 'Edit Article'
-      const route = Object.assign({}, this.tempRoute, { title: `${title}-${this.postForm.id}` })
+      const route = Object.assign({}, this.tempRoute, {
+        title: `${title}-${this.postForm.id}`
+      })
       this.$store.dispatch('tagsView/updateVisitedView', route)
     },
     submitForm() {
@@ -287,7 +304,10 @@ export default {
       })
     },
     draftForm() {
-      if (this.postForm.content.length === 0 || this.postForm.title.length === 0) {
+      if (
+        this.postForm.content.length === 0 ||
+        this.postForm.title.length === 0
+      ) {
         this.$message({
           message: '请填写必要的标题和内容',
           type: 'warning'
@@ -313,7 +333,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/mixin.scss";
+@import '~@/styles/mixin.scss';
 
 .createPost-container {
   position: relative;

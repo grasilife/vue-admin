@@ -32,7 +32,7 @@
         <el-option
           v-for="item in calendarTypeOptions"
           :key="item.key"
-          :label="item.display_name+'('+item.key+')'"
+          :label="item.display_name + '(' + item.key + ')'"
           :value="item.key"
         />
       </el-select>
@@ -81,7 +81,7 @@
         v-model="showReviewer"
         class="filter-item"
         style="margin-left:15px;"
-        @change="tableKey=tableKey+1"
+        @change="tableKey = tableKey + 1"
       >
         {{ $t('table.reviewer') }}
       </el-checkbox>
@@ -114,18 +114,22 @@
         align="center"
       >
         <template slot-scope="scope">
-          <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{
+            scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}')
+          }}</span>
         </template>
       </el-table-column>
       <el-table-column
         :label="$t('table.title')"
         min-width="150px"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <span
             class="link-type"
             @click="handleUpdate(row)"
-          >{{ row.title }}</span>
+          >{{
+            row.title
+          }}</span>
           <el-tag>{{ row.type | typeFilter }}</el-tag>
         </template>
       </el-table-column>
@@ -166,7 +170,7 @@
         align="center"
         width="95"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <span
             v-if="row.pageviews"
             class="link-type"
@@ -180,7 +184,7 @@
         class-name="status-col"
         width="100"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <el-tag :type="row.status | statusFilter">
             {{ row.status }}
           </el-tag>
@@ -192,7 +196,7 @@
         width="230"
         class-name="small-padding fixed-width"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <el-button
             type="primary"
             size="mini"
@@ -201,25 +205,25 @@
             {{ $t('table.edit') }}
           </el-button>
           <el-button
-            v-if="row.status!='published'"
+            v-if="row.status != 'published'"
             size="mini"
             type="success"
-            @click="handleModifyStatus(row,'published')"
+            @click="handleModifyStatus(row, 'published')"
           >
             {{ $t('table.publish') }}
           </el-button>
           <el-button
-            v-if="row.status!='draft'"
+            v-if="row.status != 'draft'"
             size="mini"
-            @click="handleModifyStatus(row,'draft')"
+            @click="handleModifyStatus(row, 'draft')"
           >
             {{ $t('table.draft') }}
           </el-button>
           <el-button
-            v-if="row.status!='deleted'"
+            v-if="row.status != 'deleted'"
             size="mini"
             type="danger"
-            @click="handleModifyStatus(row,'deleted')"
+            @click="handleModifyStatus(row, 'deleted')"
           >
             {{ $t('table.delete') }}
           </el-button>
@@ -228,7 +232,7 @@
     </el-table>
 
     <pagination
-      v-show="total>0"
+      v-show="total > 0"
       :total="total"
       :page.sync="listQuery.page"
       :limit.sync="listQuery.limit"
@@ -305,7 +309,7 @@
         <el-form-item :label="$t('table.remark')">
           <el-input
             v-model="temp.remark"
-            :autosize="{ minRows: 2, maxRows: 4}"
+            :autosize="{ minRows: 2, maxRows: 4 }"
             type="textarea"
             placeholder="Please input"
           />
@@ -320,7 +324,7 @@
         </el-button>
         <el-button
           type="primary"
-          @click="dialogStatus==='create'?createData():updateData()"
+          @click="dialogStatus === 'create' ? createData() : updateData()"
         >
           {{ $t('table.confirm') }}
         </el-button>
@@ -354,7 +358,9 @@
         <el-button
           type="primary"
           @click="dialogPvVisible = false"
-        >{{ $t('table.confirm') }}</el-button>
+        >{{
+          $t('table.confirm')
+        }}</el-button>
       </span>
     </el-dialog>
   </div>
@@ -412,7 +418,10 @@ export default {
       },
       importanceOptions: [1, 2, 3],
       calendarTypeOptions,
-      sortOptions: [{ label: 'ID Ascending', key: '+id' }, { label: 'ID Descending', key: '-id' }],
+      sortOptions: [
+        { label: 'ID Ascending', key: '+id' },
+        { label: 'ID Descending', key: '-id' }
+      ],
       statusOptions: ['published', 'draft', 'deleted'],
       showReviewer: false,
       temp: {
@@ -433,9 +442,20 @@ export default {
       dialogPvVisible: false,
       pvData: [],
       rules: {
-        type: [{ required: true, message: 'type is required', trigger: 'change' }],
-        timestamp: [{ type: 'date', required: true, message: 'timestamp is required', trigger: 'change' }],
-        title: [{ required: true, message: 'title is required', trigger: 'blur' }]
+        type: [
+          { required: true, message: 'type is required', trigger: 'change' }
+        ],
+        timestamp: [
+          {
+            type: 'date',
+            required: true,
+            message: 'timestamp is required',
+            trigger: 'change'
+          }
+        ],
+        title: [
+          { required: true, message: 'title is required', trigger: 'blur' }
+        ]
       },
       downloadLoading: false
     }
@@ -501,7 +521,7 @@ export default {
       })
     },
     createData() {
-      this.$refs['dataForm'].validate((valid) => {
+      this.$refs['dataForm'].validate(valid => {
         if (valid) {
           this.temp.id = parseInt(Math.random() * 100) + 1024 // mock a id
           this.temp.author = 'vue-element-admin'
@@ -528,7 +548,7 @@ export default {
       })
     },
     updateData() {
-      this.$refs['dataForm'].validate((valid) => {
+      this.$refs['dataForm'].validate(valid => {
         if (valid) {
           const tempData = Object.assign({}, this.temp)
           tempData.timestamp = +new Date(tempData.timestamp) // change Thu Nov 30 2017 16:41:05 GMT+0800 (CST) to 1512031311464
@@ -582,13 +602,15 @@ export default {
       })
     },
     formatJson(filterVal, jsonData) {
-      return jsonData.map(v => filterVal.map(j => {
-        if (j === 'timestamp') {
-          return parseTime(v[j])
-        } else {
-          return v[j]
-        }
-      }))
+      return jsonData.map(v =>
+        filterVal.map(j => {
+          if (j === 'timestamp') {
+            return parseTime(v[j])
+          } else {
+            return v[j]
+          }
+        })
+      )
     }
   }
 }

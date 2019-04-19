@@ -8,7 +8,7 @@
         :checked="todo.done"
         class="toggle"
         type="checkbox"
-        @change="toggleTodo( todo)"
+        @change="toggleTodo(todo)"
       >
       <label
         @dblclick="editing = true"
@@ -16,7 +16,7 @@
       />
       <button
         class="destroy"
-        @click="deleteTodo( todo )"
+        @click="deleteTodo(todo)"
       />
     </div>
     <input

@@ -14,7 +14,8 @@
           <el-tag
             class="permission-tag"
             size="small"
-          >admin</el-tag> can see this
+          >admin</el-tag> can see
+          this
         </span>
         <el-tag
           v-permission="['admin']"
@@ -34,7 +35,8 @@
           <el-tag
             class="permission-tag"
             size="small"
-          >editor</el-tag> can see this
+          >editor</el-tag> can see
+          this
         </span>
         <el-tag
           v-permission="['editor']"
@@ -47,7 +49,7 @@
 
       <div>
         <span
-          v-permission="['admin','editor']"
+          v-permission="['admin', 'editor']"
           class="permission-alert"
         >
           Both
@@ -58,10 +60,11 @@
           <el-tag
             class="permission-tag"
             size="small"
-          >editor</el-tag> can see this
+          >editor</el-tag> can see
+          this
         </span>
         <el-tag
-          v-permission="['admin','editor']"
+          v-permission="['admin', 'editor']"
           class="permission-sourceCode"
           type="info"
         >
@@ -71,12 +74,13 @@
     </div>
 
     <div
-      :key="'checkPermission'+key"
+      :key="'checkPermission' + key"
       style="margin-top:60px;"
     >
       <aside>
         {{ $t('permission.tips') }}
-        <br> e.g.
+        <br>
+        e.g.
       </aside>
 
       <el-tabs
@@ -110,7 +114,7 @@
         </el-tab-pane>
 
         <el-tab-pane
-          v-if="checkPermission(['admin','editor'])"
+          v-if="checkPermission(['admin', 'editor'])"
           label="Admin-OR-Editor"
         >
           Both admin or editor can see this
@@ -168,4 +172,3 @@ export default {
   }
 }
 </style>
-

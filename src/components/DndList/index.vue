@@ -1,7 +1,7 @@
 <template>
   <div class="dndList">
     <div
-      :style="{width:width1}"
+      :style="{ width: width1 }"
       class="dndList-list"
     >
       <h3>{{ list1Title }}</h3>
@@ -34,7 +34,7 @@
       </draggable>
     </div>
     <div
-      :style="{width:width2}"
+      :style="{ width: width2 }"
       class="dndList-list"
     >
       <h3>{{ list2Title }}</h3>
@@ -141,7 +141,7 @@ export default {
   background: #fff;
   padding-bottom: 40px;
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -184,11 +184,11 @@ export default {
 }
 
 .list-complete-item.sortable-chosen {
-  background: #4AB7BD;
+  background: #4ab7bd;
 }
 
 .list-complete-item.sortable-ghost {
-  background: #30B08F;
+  background: #30b08f;
 }
 
 .list-complete-enter,

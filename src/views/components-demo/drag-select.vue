@@ -35,22 +35,28 @@ export default {
   data() {
     return {
       value: ['Apple', 'Banana', 'Orange'],
-      options: [{
-        value: 'Apple',
-        label: 'Apple'
-      }, {
-        value: 'Banana',
-        label: 'Banana'
-      }, {
-        value: 'Orange',
-        label: 'Orange'
-      }, {
-        value: 'Pear',
-        label: 'Pear'
-      }, {
-        value: 'Strawberry',
-        label: 'Strawberry'
-      }]
+      options: [
+        {
+          value: 'Apple',
+          label: 'Apple'
+        },
+        {
+          value: 'Banana',
+          label: 'Banana'
+        },
+        {
+          value: 'Orange',
+          label: 'Orange'
+        },
+        {
+          value: 'Pear',
+          label: 'Pear'
+        },
+        {
+          value: 'Strawberry',
+          label: 'Strawberry'
+        }
+      ]
     }
   }
 }

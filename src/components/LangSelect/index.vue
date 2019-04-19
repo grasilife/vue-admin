@@ -12,19 +12,19 @@
     </div>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item
-        :disabled="language==='zh'"
+        :disabled="language === 'zh'"
         command="zh"
       >
         中文
       </el-dropdown-item>
       <el-dropdown-item
-        :disabled="language==='en'"
+        :disabled="language === 'en'"
         command="en"
       >
         English
       </el-dropdown-item>
       <el-dropdown-item
-        :disabled="language==='es'"
+        :disabled="language === 'es'"
         command="es"
       >
         Español

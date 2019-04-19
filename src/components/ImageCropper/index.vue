@@ -38,7 +38,9 @@
           <span
             v-show="!isSupported"
             class="vicp-no-supported-hint"
-          >{{ lang.noSupported }}</span>
+          >{{
+            lang.noSupported
+          }}</span>
           <input
             v-show="false"
             v-if="step == 1"
@@ -191,7 +193,9 @@
           <span
             v-show="loading === 1"
             class="vicp-loading"
-          >{{ lang.loading }}</span>
+          >{{
+            lang.loading
+          }}</span>
           <div class="vicp-progress-wrap">
             <span
               v-show="loading === 1"

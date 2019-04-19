@@ -13,7 +13,7 @@
         <el-button
           type="primary"
           icon="document"
-          @click="handleCopy(inputData,$event)"
+          @click="handleCopy(inputData, $event)"
         >
           copy
         </el-button>
@@ -69,4 +69,3 @@ export default {
   }
 }
 </script>
-

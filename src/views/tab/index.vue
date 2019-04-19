@@ -20,7 +20,7 @@
       >
         <keep-alive>
           <tab-pane
-            v-if="activeName==item.key"
+            v-if="activeName == item.key"
             :type="item.key"
             @create="showCreatedTimes"
           />
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style scoped>
-  .tab-container {
-    margin: 30px;
-  }
+.tab-container {
+  margin: 30px;
+}
 </style>

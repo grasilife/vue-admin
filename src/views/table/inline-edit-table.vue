@@ -24,7 +24,9 @@
         label="Date"
       >
         <template slot-scope="scope">
-          <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{
+            scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}')
+          }}</span>
         </template>
       </el-table-column>
 
@@ -57,7 +59,7 @@
         label="Status"
         width="110"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <el-tag :type="row.status | statusFilter">
             {{ row.status }}
           </el-tag>
@@ -68,7 +70,7 @@
         min-width="300px"
         label="Title"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <template v-if="row.edit">
             <el-input
               v-model="row.title"
@@ -94,7 +96,7 @@
         label="Actions"
         width="120"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <el-button
             v-if="row.edit"
             type="success"
@@ -109,7 +111,7 @@
             type="primary"
             size="small"
             icon="el-icon-edit"
-            @click="row.edit=!row.edit"
+            @click="row.edit = !row.edit"
           >
             Edit
           </el-button>

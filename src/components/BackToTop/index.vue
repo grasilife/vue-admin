@@ -14,7 +14,11 @@
         class="Icon Icon--backToTopArrow"
         aria-hidden="true"
         style="height:16px;width:16px"
-      ><path d="M12.036 15.59a1 1 0 0 1-.997.995H5.032a.996.996 0 0 1-.997-.996V8.584H1.03c-1.1 0-1.36-.633-.578-1.416L7.33.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.004z" /></svg>
+      >
+        <path
+          d="M12.036 15.59a1 1 0 0 1-.997.995H5.032a.996.996 0 0 1-.997-.996V8.584H1.03c-1.1 0-1.36-.633-.578-1.416L7.33.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.004z"
+        />
+      </svg>
     </div>
   </transition>
 </template>
@@ -88,8 +92,8 @@ export default {
       }, 16.7)
     },
     easeInOutQuad(t, b, c, d) {
-      if ((t /= d / 2) < 1) return c / 2 * t * t + b
-      return -c / 2 * (--t * (t - 2) - 1) + b
+      if ((t /= d / 2) < 1) return (c / 2) * t * t + b
+      return (-c / 2) * (--t * (t - 2) - 1) + b
     }
   }
 }
@@ -109,12 +113,12 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 
 .fade-enter,
 .fade-leave-to {
-  opacity: 0
+  opacity: 0;
 }
 
 .back-to-ceiling .Icon {

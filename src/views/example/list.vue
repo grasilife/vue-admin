@@ -24,7 +24,9 @@
         label="Date"
       >
         <template slot-scope="scope">
-          <span>{{ scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{
+            scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}')
+          }}</span>
         </template>
       </el-table-column>
 
@@ -57,7 +59,7 @@
         label="Status"
         width="110"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <el-tag :type="row.status | statusFilter">
             {{ row.status }}
           </el-tag>
@@ -68,9 +70,9 @@
         min-width="300px"
         label="Title"
       >
-        <template slot-scope="{row}">
+        <template slot-scope="{ row }">
           <router-link
-            :to="'/example/edit/'+row.id"
+            :to="'/example/edit/' + row.id"
             class="link-type"
           >
             <span>{{ row.title }}</span>
@@ -84,7 +86,7 @@
         width="120"
       >
         <template slot-scope="scope">
-          <router-link :to="'/example/edit/'+scope.row.id">
+          <router-link :to="'/example/edit/' + scope.row.id">
             <el-button
               type="primary"
               size="small"
@@ -98,7 +100,7 @@
     </el-table>
 
     <pagination
-      v-show="total>0"
+      v-show="total > 0"
       :total="total"
       :page.sync="listQuery.page"
       :limit.sync="listQuery.limit"
