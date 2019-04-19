@@ -1,13 +1,22 @@
 <template>
   <div class="components-container">
-    <aside>This is based on
-      <a class="link-type" href="//github.com/dai-siki/vue-image-crop-upload"> vue-image-crop-upload</a>.
+    <aside>
+      This is based on
+      <a
+        class="link-type"
+        href="//github.com/dai-siki/vue-image-crop-upload"
+      > vue-image-crop-upload</a>.
       {{ $t('components.imageUploadTips') }}
     </aside>
 
     <pan-thumb :image="image" />
 
-    <el-button type="primary" icon="upload" style="position: absolute;bottom: 15px;margin-left: 40px;" @click="imagecropperShow=true">
+    <el-button
+      type="primary"
+      icon="upload"
+      style="position: absolute;bottom: 15px;margin-left: 40px;"
+      @click="imagecropperShow=true"
+    >
       Change Avatar
     </el-button>
 
