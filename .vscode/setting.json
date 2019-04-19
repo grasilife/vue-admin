@@ -20,5 +20,6 @@
   "eslint.autoFixOnSave": true,
   "path-intellisense.mappings": {
     "@": "${workspaceRoot}/src"
-  }
+  },
+  "prettier.eslintIntegration": true
 }
