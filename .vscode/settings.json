@@ -16,5 +16,8 @@
   "path-intellisense.mappings": {
     "@": "${workspaceRoot}/src"
   },
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

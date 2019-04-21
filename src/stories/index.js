@@ -1,6 +1,4 @@
-import {
-  storiesOf
-} from '@storybook/vue'
+import { storiesOf } from '@storybook/vue'
 import MyButton from './Button.vue'
 
 storiesOf('Button', module)
