@@ -14,11 +14,11 @@ module.exports = {
     jest: true
   },
   // recommended规则是eslint核心配置(最严格的),推荐的
-  extends: ['plugin:vue/recommended', 'eslint:recommended'],
+  // extends: ['plugin:vue/recommended', 'eslint:recommended'],
   // essential规则是eslint核心配置(宽松的)
   // extends: ['plugin:vue/essential', 'eslint:recommended']
   //prettier规则的"@vue/prettier",
-  // extends: ['plugin:vue/recommended', 'eslint:recommended', '@vue/prettier'],
+  extends: ['plugin:vue/recommended', '@vue/prettier'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
