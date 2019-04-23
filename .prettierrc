@@ -1,18 +1,4 @@
 {
-  "eslintIntegration": true,
   "singleQuote": true,
-  "semi": false,
-  "overrides": [{
-      "files": ".prettierrc",
-      "options": {
-        "parser": "json"
-      }
-    },
-    {
-      "files": ".stylelintrc",
-      "options": {
-        "parser": "json"
-      }
-    }
-  ]
+  "semi": false
 }
