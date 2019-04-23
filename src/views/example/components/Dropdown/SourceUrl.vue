@@ -1,8 +1,5 @@
 <template>
-  <el-dropdown
-    :show-timeout="100"
-    trigger="click"
-  >
+  <el-dropdown :show-timeout="100" trigger="click">
     <el-button plain>
       Link
       <i class="el-icon-caret-bottom el-icon--right" />
@@ -17,10 +14,7 @@
         style="margin-bottom: 0px"
         prop="source_uri"
       >
-        <el-input
-          v-model="source_uri"
-          placeholder="Please enter the content"
-        >
+        <el-input v-model="source_uri" placeholder="Please enter the content">
           <template slot="prepend">
             URL
           </template>

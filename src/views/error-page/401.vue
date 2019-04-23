@@ -1,10 +1,6 @@
 <template>
   <div class="errPage-container">
-    <el-button
-      icon="arrow-left"
-      class="pan-back-btn"
-      @click="back"
-    >
+    <el-button icon="arrow-left" class="pan-back-btn" @click="back">
       返回
     </el-button>
     <el-row>
@@ -12,10 +8,7 @@
         <h1 class="text-jumbo text-ginormous">
           Oops!
         </h1>
-        gif来源<a
-          href="https://zh.airbnb.com/"
-          target="_blank"
-        >airbnb</a> 页面
+        gif来源<a href="https://zh.airbnb.com/" target="_blank">airbnb</a> 页面
         <h2>你没有权限去该页面</h2>
         <h6>如有不满请联系你领导</h6>
         <ul class="list-unstyled">
@@ -29,10 +22,7 @@
             <a href="https://www.taobao.com/">随便看看</a>
           </li>
           <li>
-            <a
-              href="#"
-              @click.prevent="dialogVisible = true"
-            >点我看图</a>
+            <a href="#" @click.prevent="dialogVisible = true">点我看图</a>
           </li>
         </ul>
       </el-col>
@@ -42,17 +32,11 @@
           width="313"
           height="428"
           alt="Girl has dropped her ice cream."
-        >
+        />
       </el-col>
     </el-row>
-    <el-dialog
-      :visible.sync="dialogVisible"
-      title="随便看"
-    >
-      <img
-        :src="ewizardClap"
-        class="pan-img"
-      >
+    <el-dialog :visible.sync="dialogVisible" title="随便看">
+      <img :src="ewizardClap" class="pan-img" />
     </el-dialog>
   </div>
 </template>

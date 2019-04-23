@@ -21,20 +21,14 @@
         action="https://httpbin.org/post"
         list-type="picture-card"
       >
-        <el-button
-          size="small"
-          type="primary"
-        >
+        <el-button size="small" type="primary">
           Click upload
         </el-button>
       </el-upload>
       <el-button @click="dialogVisible = false">
         Cancel
       </el-button>
-      <el-button
-        type="primary"
-        @click="handleSubmit"
-      >
+      <el-button type="primary" @click="handleSubmit">
         Confirm
       </el-button>
     </el-dialog>

@@ -7,20 +7,17 @@
         autocomplete="off"
         placeholder="Todo List"
         @keyup.enter="addTodo"
-      >
+      />
     </header>
     <!-- main section -->
-    <section
-      v-show="todos.length"
-      class="main"
-    >
+    <section v-show="todos.length" class="main">
       <input
         id="toggle-all"
         :checked="allChecked"
         class="toggle-all"
         type="checkbox"
         @change="toggleAll({ done: !allChecked })"
-      >
+      />
       <label for="toggle-all" />
       <ul class="todo-list">
         <todo
@@ -34,23 +31,18 @@
       </ul>
     </section>
     <!-- footer -->
-    <footer
-      v-show="todos.length"
-      class="footer"
-    >
+    <footer v-show="todos.length" class="footer">
       <span class="todo-count">
         <strong>{{ remaining }}</strong>
         {{ remaining | pluralize('item') }} left
       </span>
       <ul class="filters">
-        <li
-          v-for="(val, key) in filters"
-          :key="key"
-        >
+        <li v-for="(val, key) in filters" :key="key">
           <a
             :class="{ selected: visibility === key }"
             @click.prevent="visibility = key"
-          >{{ key | capitalize }}</a>
+            >{{ key | capitalize }}</a
+          >
         </li>
       </ul>
       <!-- <button class="clear-completed" v-show="todos.length > remaining" @click="clearCompleted">

@@ -2,10 +2,9 @@
   <div class="components-container">
     <aside>
       Markdown is based on
-      <a
-        href="https://github.com/nhnent/tui.editor"
-        target="_blank"
-      >tui.editor</a>
+      <a href="https://github.com/nhnent/tui.editor" target="_blank"
+        >tui.editor</a
+      >
       ，simply wrapped with Vue.
       <a
         target="_blank"
@@ -19,10 +18,7 @@
       <el-tag class="tag-title">
         Basic:
       </el-tag>
-      <markdown-editor
-        v-model="content1"
-        height="300px"
-      />
+      <markdown-editor v-model="content1" height="300px" />
     </div>
 
     <div class="editor-container">

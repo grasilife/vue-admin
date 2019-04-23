@@ -14,13 +14,10 @@
       <a
         target="_blank"
         href="https://medium.com/the-vue-point/plans-for-the-next-iteration-of-vue-js-777ffea6fabf"
-      >medium</a>
+        >medium</a
+      >
     </div>
-    <div
-      ref="content"
-      class="node-article-content"
-      v-html="article.content"
-    />
+    <div ref="content" class="node-article-content" v-html="article.content" />
   </div>
 </template>
 

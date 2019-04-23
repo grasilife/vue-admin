@@ -4,7 +4,7 @@
       <a
         href="https://panjiachen.github.io/vue-element-admin-site/guide/advanced/icon.html"
         target="_blank"
-      >Add and use
+        >Add and use
       </a>
     </aside>
     <el-tabs type="border-card">
@@ -19,10 +19,7 @@
               {{ generateIconCode(item) }}
             </div>
             <div class="icon-item">
-              <svg-icon
-                :icon-class="item"
-                class-name="disabled"
-              />
+              <svg-icon :icon-class="item" class-name="disabled" />
               <span>{{ item }}</span>
             </div>
           </el-tooltip>

@@ -1,20 +1,11 @@
 <template>
   <div class="app-container">
     <switch-roles @change="handleRolesChange" />
-    <div
-      :key="key"
-      style="margin-top:30px;"
-    >
+    <div :key="key" style="margin-top:30px;">
       <div>
-        <span
-          v-permission="['admin']"
-          class="permission-alert"
-        >
+        <span v-permission="['admin']" class="permission-alert">
           Only
-          <el-tag
-            class="permission-tag"
-            size="small"
-          >admin</el-tag> can see
+          <el-tag class="permission-tag" size="small">admin</el-tag> can see
           this
         </span>
         <el-tag
@@ -27,15 +18,9 @@
       </div>
 
       <div>
-        <span
-          v-permission="['editor']"
-          class="permission-alert"
-        >
+        <span v-permission="['editor']" class="permission-alert">
           Only
-          <el-tag
-            class="permission-tag"
-            size="small"
-          >editor</el-tag> can see
+          <el-tag class="permission-tag" size="small">editor</el-tag> can see
           this
         </span>
         <el-tag
@@ -48,19 +33,10 @@
       </div>
 
       <div>
-        <span
-          v-permission="['admin', 'editor']"
-          class="permission-alert"
-        >
+        <span v-permission="['admin', 'editor']" class="permission-alert">
           Both
-          <el-tag
-            class="permission-tag"
-            size="small"
-          >admin</el-tag> and
-          <el-tag
-            class="permission-tag"
-            size="small"
-          >editor</el-tag> can see
+          <el-tag class="permission-tag" size="small">admin</el-tag> and
+          <el-tag class="permission-tag" size="small">editor</el-tag> can see
           this
         </span>
         <el-tag
@@ -73,42 +49,24 @@
       </div>
     </div>
 
-    <div
-      :key="'checkPermission' + key"
-      style="margin-top:60px;"
-    >
+    <div :key="'checkPermission' + key" style="margin-top:60px;">
       <aside>
         {{ $t('permission.tips') }}
-        <br>
+        <br />
         e.g.
       </aside>
 
-      <el-tabs
-        type="border-card"
-        style="width:550px;"
-      >
-        <el-tab-pane
-          v-if="checkPermission(['admin'])"
-          label="Admin"
-        >
+      <el-tabs type="border-card" style="width:550px;">
+        <el-tab-pane v-if="checkPermission(['admin'])" label="Admin">
           Admin can see this
-          <el-tag
-            class="permission-sourceCode"
-            type="info"
-          >
+          <el-tag class="permission-sourceCode" type="info">
             v-if="checkPermission(['admin'])"
           </el-tag>
         </el-tab-pane>
 
-        <el-tab-pane
-          v-if="checkPermission(['editor'])"
-          label="Editor"
-        >
+        <el-tab-pane v-if="checkPermission(['editor'])" label="Editor">
           Editor can see this
-          <el-tag
-            class="permission-sourceCode"
-            type="info"
-          >
+          <el-tag class="permission-sourceCode" type="info">
             v-if="checkPermission(['editor'])"
           </el-tag>
         </el-tab-pane>
@@ -118,10 +76,7 @@
           label="Admin-OR-Editor"
         >
           Both admin or editor can see this
-          <el-tag
-            class="permission-sourceCode"
-            type="info"
-          >
+          <el-tag class="permission-sourceCode" type="info">
             v-if="checkPermission(['admin','editor'])"
           </el-tag>
         </el-tab-pane>

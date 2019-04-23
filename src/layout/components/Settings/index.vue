@@ -15,26 +15,17 @@
 
       <div class="drawer-item">
         <span>{{ $t('settings.tagsView') }}</span>
-        <el-switch
-          v-model="tagsView"
-          class="drawer-switch"
-        />
+        <el-switch v-model="tagsView" class="drawer-switch" />
       </div>
 
       <div class="drawer-item">
         <span>{{ $t('settings.fixedHeader') }}</span>
-        <el-switch
-          v-model="fixedHeader"
-          class="drawer-switch"
-        />
+        <el-switch v-model="fixedHeader" class="drawer-switch" />
       </div>
 
       <div class="drawer-item">
         <span>{{ $t('settings.sidebarLogo') }}</span>
-        <el-switch
-          v-model="sidebarLogo"
-          class="drawer-switch"
-        />
+        <el-switch v-model="sidebarLogo" class="drawer-switch" />
       </div>
     </div>
   </div>

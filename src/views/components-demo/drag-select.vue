@@ -15,11 +15,7 @@
     </el-drag-select>
 
     <div style="margin-top:30px;">
-      <el-tag
-        v-for="item of value"
-        :key="item"
-        style="margin-right:15px;"
-      >
+      <el-tag v-for="item of value" :key="item" style="margin-right:15px;">
         {{ item }}
       </el-tag>
     </div>

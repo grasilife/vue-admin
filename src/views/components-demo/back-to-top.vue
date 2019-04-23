@@ -114,10 +114,7 @@
       <div>placeholder</div>
     </div>
     <!-- you can add element-ui's tooltip -->
-    <el-tooltip
-      placement="top"
-      content="tooltip"
-    >
+    <el-tooltip placement="top" content="tooltip">
       <back-to-top
         :custom-style="myBackToTopStyle"
         :visibility-height="300"

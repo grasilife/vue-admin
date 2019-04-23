@@ -3,10 +3,7 @@
     :class="{ fullscreen: fullscreen }"
     class="tinymce-container editor-container"
   >
-    <textarea
-      :id="tinymceId"
-      class="tinymce-textarea"
-    />
+    <textarea :id="tinymceId" class="tinymce-textarea" />
     <div class="editor-custom-btn-container">
       <editorImage
         color="#1890ff"

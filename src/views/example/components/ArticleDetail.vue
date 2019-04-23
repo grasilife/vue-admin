@@ -6,10 +6,7 @@
       :rules="rules"
       class="form-container"
     >
-      <sticky
-        :z-index="10"
-        :class-name="'sub-navbar ' + postForm.status"
-      >
+      <sticky :z-index="10" :class-name="'sub-navbar ' + postForm.status">
         <CommentDropdown v-model="postForm.comment_disabled" />
         <PlatformDropdown v-model="postForm.platforms" />
         <SourceUrlDropdown v-model="postForm.source_uri" />
@@ -21,11 +18,7 @@
         >
           Publush
         </el-button>
-        <el-button
-          v-loading="loading"
-          type="warning"
-          @click="draftForm"
-        >
+        <el-button v-loading="loading" type="warning" @click="draftForm">
           Draft
         </el-button>
       </sticky>
@@ -35,10 +28,7 @@
           <Warning />
 
           <el-col :span="24">
-            <el-form-item
-              style="margin-bottom: 40px;"
-              prop="title"
-            >
+            <el-form-item style="margin-bottom: 40px;" prop="title">
               <MDinput
                 v-model="postForm.title"
                 :maxlength="100"
@@ -124,27 +114,16 @@
             autosize
             placeholder="Please enter the content"
           />
-          <span
-            v-show="contentShortLength"
-            class="word-counter"
-          >{{ contentShortLength }}words</span>
+          <span v-show="contentShortLength" class="word-counter"
+            >{{ contentShortLength }}words</span
+          >
         </el-form-item>
 
-        <el-form-item
-          prop="content"
-          style="margin-bottom: 30px;"
-        >
-          <Tinymce
-            ref="editor"
-            v-model="postForm.content"
-            :height="400"
-          />
+        <el-form-item prop="content" style="margin-bottom: 30px;">
+          <Tinymce ref="editor" v-model="postForm.content" :height="400" />
         </el-form-item>
 
-        <el-form-item
-          prop="image_uri"
-          style="margin-bottom: 30px;"
-        >
+        <el-form-item prop="image_uri" style="margin-bottom: 30px;">
           <Upload v-model="postForm.image_uri" />
         </el-form-item>
       </div>

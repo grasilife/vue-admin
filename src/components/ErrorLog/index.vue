@@ -5,11 +5,7 @@
       style="line-height: 25px;margin-top: -5px;"
       @click.native="dialogTableVisible = true"
     >
-      <el-button
-        style="padding: 8px 10px;"
-        size="small"
-        type="danger"
-      >
+      <el-button style="padding: 8px 10px;" size="small" type="danger">
         <svg-icon icon-class="bug" />
       </el-button>
     </el-badge>
@@ -20,10 +16,7 @@
       width="80%"
       append-to-body
     >
-      <el-table
-        :data="errorLogs"
-        border
-      >
+      <el-table :data="errorLogs" border>
         <el-table-column label="Message">
           <template slot-scope="{ row }">
             <div>
@@ -32,23 +25,19 @@
                 {{ row.err.message }}
               </el-tag>
             </div>
-            <br>
+            <br />
             <div>
-              <span
-                class="message-title"
-                style="padding-right: 10px;"
-              >Info:
+              <span class="message-title" style="padding-right: 10px;"
+                >Info:
               </span>
               <el-tag type="warning">
                 {{ row.vm.$vnode.tag }} error in {{ row.info }}
               </el-tag>
             </div>
-            <br>
+            <br />
             <div>
-              <span
-                class="message-title"
-                style="padding-right: 16px;"
-              >Url:
+              <span class="message-title" style="padding-right: 16px;"
+                >Url:
               </span>
               <el-tag type="success">
                 {{ row.url }}

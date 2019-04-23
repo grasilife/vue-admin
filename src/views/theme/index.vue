@@ -38,22 +38,10 @@
     </div>
 
     <div class="block">
-      <el-button
-        type="primary"
-        icon="el-icon-edit"
-      />
-      <el-button
-        type="primary"
-        icon="el-icon-share"
-      />
-      <el-button
-        type="primary"
-        icon="el-icon-delete"
-      />
-      <el-button
-        type="primary"
-        icon="el-icon-search"
-      >
+      <el-button type="primary" icon="el-icon-edit" />
+      <el-button type="primary" icon="el-icon-share" />
+      <el-button type="primary" icon="el-icon-delete" />
+      <el-button type="primary" icon="el-icon-search">
         Search
       </el-button>
       <el-button type="primary">

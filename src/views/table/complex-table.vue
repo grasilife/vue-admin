@@ -108,36 +108,22 @@
           <span>{{ scope.row.id }}</span>
         </template>
       </el-table-column>
-      <el-table-column
-        :label="$t('table.date')"
-        width="150px"
-        align="center"
-      >
+      <el-table-column :label="$t('table.date')" width="150px" align="center">
         <template slot-scope="scope">
           <span>{{
             scope.row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}')
           }}</span>
         </template>
       </el-table-column>
-      <el-table-column
-        :label="$t('table.title')"
-        min-width="150px"
-      >
+      <el-table-column :label="$t('table.title')" min-width="150px">
         <template slot-scope="{ row }">
-          <span
-            class="link-type"
-            @click="handleUpdate(row)"
-          >{{
+          <span class="link-type" @click="handleUpdate(row)">{{
             row.title
           }}</span>
           <el-tag>{{ row.type | typeFilter }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column
-        :label="$t('table.author')"
-        width="110px"
-        align="center"
-      >
+      <el-table-column :label="$t('table.author')" width="110px" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.author }}</span>
         </template>
@@ -152,10 +138,7 @@
           <span style="color:red;">{{ scope.row.reviewer }}</span>
         </template>
       </el-table-column>
-      <el-table-column
-        :label="$t('table.importance')"
-        width="80px"
-      >
+      <el-table-column :label="$t('table.importance')" width="80px">
         <template slot-scope="scope">
           <svg-icon
             v-for="n in +scope.row.importance"
@@ -165,17 +148,14 @@
           />
         </template>
       </el-table-column>
-      <el-table-column
-        :label="$t('table.readings')"
-        align="center"
-        width="95"
-      >
+      <el-table-column :label="$t('table.readings')" align="center" width="95">
         <template slot-scope="{ row }">
           <span
             v-if="row.pageviews"
             class="link-type"
             @click="handleFetchPv(row.pageviews)"
-          >{{ row.pageviews }}</span>
+            >{{ row.pageviews }}</span
+          >
           <span v-else>0</span>
         </template>
       </el-table-column>
@@ -197,11 +177,7 @@
         class-name="small-padding fixed-width"
       >
         <template slot-scope="{ row }">
-          <el-button
-            type="primary"
-            size="mini"
-            @click="handleUpdate(row)"
-          >
+          <el-button type="primary" size="mini" @click="handleUpdate(row)">
             {{ $t('table.edit') }}
           </el-button>
           <el-button
@@ -239,10 +215,7 @@
       @pagination="getList"
     />
 
-    <el-dialog
-      :title="textMap[dialogStatus]"
-      :visible.sync="dialogFormVisible"
-    >
+    <el-dialog :title="textMap[dialogStatus]" :visible.sync="dialogFormVisible">
       <el-form
         ref="dataForm"
         :rules="rules"
@@ -251,10 +224,7 @@
         label-width="70px"
         style="width: 400px; margin-left:50px;"
       >
-        <el-form-item
-          :label="$t('table.type')"
-          prop="type"
-        >
+        <el-form-item :label="$t('table.type')" prop="type">
           <el-select
             v-model="temp.type"
             class="filter-item"
@@ -268,20 +238,14 @@
             />
           </el-select>
         </el-form-item>
-        <el-form-item
-          :label="$t('table.date')"
-          prop="timestamp"
-        >
+        <el-form-item :label="$t('table.date')" prop="timestamp">
           <el-date-picker
             v-model="temp.timestamp"
             type="datetime"
             placeholder="Please pick a date"
           />
         </el-form-item>
-        <el-form-item
-          :label="$t('table.title')"
-          prop="title"
-        >
+        <el-form-item :label="$t('table.title')" prop="title">
           <el-input v-model="temp.title" />
         </el-form-item>
         <el-form-item :label="$t('table.status')">
@@ -315,10 +279,7 @@
           />
         </el-form-item>
       </el-form>
-      <div
-        slot="footer"
-        class="dialog-footer"
-      >
+      <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">
           {{ $t('table.cancel') }}
         </el-button>
@@ -331,10 +292,7 @@
       </div>
     </el-dialog>
 
-    <el-dialog
-      :visible.sync="dialogPvVisible"
-      title="Reading statistics"
-    >
+    <el-dialog :visible.sync="dialogPvVisible" title="Reading statistics">
       <el-table
         :data="pvData"
         border
@@ -342,23 +300,11 @@
         highlight-current-row
         style="width: 100%"
       >
-        <el-table-column
-          prop="key"
-          label="Channel"
-        />
-        <el-table-column
-          prop="pv"
-          label="Pv"
-        />
+        <el-table-column prop="key" label="Channel" />
+        <el-table-column prop="pv" label="Pv" />
       </el-table>
-      <span
-        slot="footer"
-        class="dialog-footer"
-      >
-        <el-button
-          type="primary"
-          @click="dialogPvVisible = false"
-        >{{
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="dialogPvVisible = false">{{
           $t('table.confirm')
         }}</el-button>
       </span>
